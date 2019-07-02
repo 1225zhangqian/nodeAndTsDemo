@@ -1,0 +1,32 @@
+{
+  "name": "nodeandtsdemo",
+  "version": "1.0.0",
+  "description": "Node.js + Express + TypeScript 实现一个简单的登陆注册功能",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env nodemon --watch 'src/' -e ts --exec 'ts-node' ./src/app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1225zhangqian/nodeAndTsDemo.git"
+  },
+  "author": "qian.zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1225zhangqian/nodeAndTsDemo/issues"
+  },
+  "homepage": "https://github.com/1225zhangqian/nodeAndTsDemo#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "cross-env": "^5.2.0",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.2"
+  }
+}
