@@ -1,7 +1,7 @@
 import { ISystemConfig } from "@/types/config";
 
 const systemConfig: ISystemConfig = {
-  port: 8002
+  port: 8003
 };
 
 export default systemConfig;
