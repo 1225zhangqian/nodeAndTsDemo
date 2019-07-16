@@ -1,10 +1,11 @@
 import bodyParser from "body-parser";
 import express from "express";
 import { NextFunction, Request, Response } from "express"; // express 申明文件定义的类型
-
-// 自定义模块
+import { dbTools } from "./utils";
 import systemConfig from "./config";
-
+// 连接数据库，在创建 express 服务前执行
+dbTools.connectMongo();
+// 自定义模块
 const app = express();
 
 // 处理 post 请求的请求体，限制大小最多为 20 兆
