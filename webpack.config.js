@@ -10,7 +10,7 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'my-first-webpack-ts.bundle.js'
   },
-  resolve: { extensions: ['*', '.js', '.jsx', 'ts', 'tsx'] },
+  resolve: { extensions: ['*', '.js', '.jsx', '.ts', '.tsx'] },
   module: {
     rules: [
       {
@@ -23,7 +23,7 @@ module.exports = {
           }
         }
       },
-      { test: /\.tsx?$/, loader: 'ts-loader' },
+      { test: /\.(tsx|ts)$/, loader: 'ts-loader' },
       {
         test: /\.css$/,
         use: [
