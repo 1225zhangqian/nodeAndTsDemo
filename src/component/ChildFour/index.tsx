@@ -9,3 +9,4 @@ export const ChildFour = props => {
         </label>
     </div >
 }
+export default ChildFour

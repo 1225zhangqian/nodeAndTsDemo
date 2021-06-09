@@ -4,3 +4,4 @@ export const ChildTwo = props => {
         <div>{props.message}</div>
     </div>)
 }
+export default ChildTwo
