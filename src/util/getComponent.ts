@@ -1,4 +1,4 @@
-const req = require.context('../component', true, /index\.tsx$/);
+const req = require.context('../../local_modules', true, /index\.tsx$/);
 export const getAllComponentsList = () => {
   const allComponentsList = {};
   req.keys().forEach(file => {
@@ -10,4 +10,20 @@ export const getAllComponentsList = () => {
     allComponentsList[fileName] = req(file).default;
   });
   return allComponentsList;
+};
+
+export const getNotification = () => {
+  return import('is-notification').then(module => {
+    // Do something with the module.
+    console.log(module);
+    return module;
+  });
+};
+export const getDynamicComponent = name => {
+  // can't use a dynamic variable
+  return import('is-notification').then(module => {
+    // Do something with the module.
+    console.log(module);
+    return module;
+  });
 };
