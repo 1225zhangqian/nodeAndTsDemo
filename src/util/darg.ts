@@ -68,9 +68,8 @@ class Drag {
       if (!ele) {
         ele = document.createElement('div');
         ele.setAttribute('id', 'drag-ele-placeholder');
-        ele.innerHTML = `<div style="width: 100%; height:50px; position: relative">
-                <div style="width: 150px; height: 40px; text-align: center; position: absolute;
-                left: 0; right: 0; top: 0; bottom:0; margin: auto; background: #878; line-height: 40px">放置组件</div>
+        ele.innerHTML = `<div >
+                <div style="width: 150px; height: 40px; text-align: center; background: #878; line-height: 40px">放置组件</div>
               </div>`;
       }
       return ele;
@@ -95,7 +94,7 @@ class Drag {
 
     const dropEle = this.params?.dropEle;
     if (dropEle && removeEle) {
-      // dropEle.removeChild(removeEle);
+      dropEle.removeChild(removeEle);
     }
   };
 
@@ -123,7 +122,6 @@ class Drag {
   //删除占位元素
   dragLeaveEvent = ev => {
     ev.preventDefault();
-    this.removePlaceholderEle();
     console.log('离开放置区');
     console.log('删除占位元素');
   };
