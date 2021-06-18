@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Drag from '../util/darg';
+import ChildFour from '../component/ChildFour'
 
 //iframe hooks
 const useIframeLoad = () => {
@@ -38,8 +39,8 @@ export const Page: React.FunctionComponent = () => {
         const iframe = document.getElementById('my-iframe')
         if (isIFrame(iframe) && iframe) {
             Drag.init({
-                dragEle: document.getElementById('drag-box'),
-                dropEle: iframe.contentWindow?.document.getElementById('drop-box')
+                dropEle: iframe.contentWindow?.document.getElementById('drop-box'),
+                dragEle: document.getElementById('drag-box')
             })
         }
 
@@ -53,10 +54,11 @@ export const Page: React.FunctionComponent = () => {
             <div className="drag-item"   >拖动元素</div>
             <div className="drag-item"   >拖动元素</div>
             <div className="drag-item"   >拖动元素</div>
+            <ChildFour />
         </div>
         {/* <!-- 预览区 --> */}
         <div className="drop-content">
-            <iframe id="my-iframe" src="http://localhost:3000/iframe" style={{ width: "100%", height: "480px", }} />
+            <iframe id="my-iframe" src="/iframe" allow="payment" style={{ width: "100%", height: "480px", }} />
         </div>
     </>
 }

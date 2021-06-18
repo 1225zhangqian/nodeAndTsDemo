@@ -52,6 +52,9 @@ module.exports = {
     port: 3000,
     // publicPath: "http://localhost:3000/dist/",
     hot: true,
+    //  When using the HTML5 History API,
+    //  the index.html page will likely have to be served in place of any 404 responses.
+    //  Enable devServer.historyApiFallback by setting it to true:
     historyApiFallback: true
   },
   plugins: [

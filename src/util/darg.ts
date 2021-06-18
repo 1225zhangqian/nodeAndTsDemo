@@ -88,10 +88,12 @@ class Drag {
     if (!iframe) {
       return;
     }
-    const removeEle = iframe.contentWindow?.document.getElementById(
-      'drag-ele-placeholder'
+    // const removeEle = iframe.contentWindow?.document.getElementById(
+    //   'drag-ele-placeholder'
+    // );
+    const removeEle = this.params?.dropEle?.querySelector(
+      '#drag-ele-placeholder'
     );
-
     const dropEle = this.params?.dropEle;
     if (dropEle && removeEle) {
       dropEle.removeChild(removeEle);
@@ -100,13 +102,10 @@ class Drag {
 
   /****** 事件处理 ******/
   dragEndEvent = ev => {
-    const iframe = this.getIframe();
-    if (iframe) {
-      const insertEle = iframe.contentWindow?.document.getElementById(
-        'drag-ele-placeholder'
-      );
-      insertEle?.before(ev.target);
-    }
+    const insertEle = this.params?.dropEle?.querySelector(
+      '#drag-ele-placeholder'
+    );
+    insertEle?.before(ev.target);
     this.removePlaceholderEle();
     console.log('拖拽结束');
     console.log('删除占位元素');
