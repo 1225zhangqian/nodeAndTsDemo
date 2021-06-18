@@ -17,13 +17,6 @@ export class MyFirstGrid extends React.Component {
   }
 
   renderComponent = () => {
-    const dynamicComponentList = [{
-      "name": "ChildFour",
-      "component": "ChildFour",
-    }, {
-      "name": "notification-test",
-      "component": "TipsTest"
-    }]
     // const dynamicComponentListView = dynamicComponentList.map(({ name, component: Component }, index) => ({
     //   key: name,
     //   name: name,
@@ -44,7 +37,6 @@ export class MyFirstGrid extends React.Component {
   }
   render() {
 
-
     const componentList = getAllComponentsList()
     const viewList = Object.keys(componentList).map((name, index) => ({
       key: name,
@@ -60,7 +52,8 @@ export class MyFirstGrid extends React.Component {
     }
 
     return (
-      <div><button onClick={this.open}>open notification</button>
+      <div>
+        <button onClick={this.open}>open notification</button>
         <button onClick={this.renderComponent}>render notification</button>
         <GridLayout className="layout" layout={layout} cols={12} rowHeight={30} width={1200}>
 

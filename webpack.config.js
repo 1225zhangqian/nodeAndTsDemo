@@ -51,7 +51,8 @@ module.exports = {
     contentBase: './dist',
     port: 3000,
     // publicPath: "http://localhost:3000/dist/",
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
   plugins: [
     new CleanWebpackPlugin(),
