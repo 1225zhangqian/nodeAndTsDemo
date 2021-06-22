@@ -46,8 +46,10 @@ export const Page: React.FunctionComponent = () => {
 
     }
 
-    useIframeLoad() && init();
-
+    useIframeLoad()
+    const onLoad = () => {
+        init()
+    }
     return <>
         {/* <!-- 组件区 --> */}
         <div id="drag-box">
@@ -58,7 +60,7 @@ export const Page: React.FunctionComponent = () => {
         </div>
         {/* <!-- 预览区 --> */}
         <div className="drop-content">
-            <iframe id="my-iframe" src="/iframe" allow="payment" style={{ width: "100%", height: "480px", }} />
+            <iframe id="my-iframe" src="/iframe" onLoad={onLoad} allow="payment" style={{ width: "100%", height: "480px", }} />
         </div>
     </>
 }
